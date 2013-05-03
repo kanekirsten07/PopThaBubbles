@@ -24,7 +24,7 @@ public class Bubble implements Serializable {
 	
 	public void fall()
 	{
-		ycoord+= 10;
+		ycoord+= 5;
 	}
 	
 	public int getxcoord()
@@ -46,9 +46,9 @@ public class Bubble implements Serializable {
 		int lor = r.nextInt(2);
 		switch(lor){
 		case(0):
-			xcoord+= 10;
+			xcoord+= 5;
 		case(1): 
-			xcoord-=10;
+			xcoord-=5;
 		}
 	}
 	

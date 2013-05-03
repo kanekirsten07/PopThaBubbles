@@ -4,6 +4,8 @@ import java.io.Serializable;
 import java.util.ArrayList;
 import java.util.Random;
 
+
+
 import android.os.Handler;
 import android.os.Message;
 import android.util.AttributeSet;
@@ -39,7 +41,7 @@ public class GameBoardView extends View implements OnTouchListener, Serializable
     SharedPreferences prefs;
     public boolean gameover = false;
     Editor editor;
-    
+    private int timekeeper = 0;
     private long _spawnDelay = 500;
 	
 	
@@ -50,7 +52,7 @@ public class GameBoardView extends View implements OnTouchListener, Serializable
 	public void setScore(int savedscore){
 		this.score =savedscore;
 	}
-	
+	/*
 	
 	 private RefreshHandler _redrawHandler = new RefreshHandler();
 
@@ -67,6 +69,7 @@ public class GameBoardView extends View implements OnTouchListener, Serializable
 	            sendMessageDelayed(obtainMessage(0), delayMillis);
 	        }
 	    };
+	    */
 
 	    public GameBoardView(Context context, AttributeSet attrs) {
 	        super(context, attrs);
@@ -89,7 +92,7 @@ public class GameBoardView extends View implements OnTouchListener, Serializable
 	    public void setMode(int mode) {
 	        if (mode == RUNNING) {
 	        	paused = false;
-	            update();
+	            //update();
 	            return;
 	        }
 	        if (mode == PAUSE) {
@@ -121,15 +124,16 @@ public class GameBoardView extends View implements OnTouchListener, Serializable
         //y-coordinate
         Random r2 = new Random();
        
+        String spawn = OptionsActivity.getNumBubbles(c);
+    	int spawnrate =Integer.parseInt( spawn);
         
-        
-        
+    	if(timekeeper % (5*spawnrate) == 0){
         for(int i = 0; i < Integer.parseInt(OptionsActivity.getNumBubbles(super.getContext())); i++){
         	bubblenum = r.nextInt(9);
         	 {
              
         		 if(bubblenum == 0){
-        			 bubble = BitmapFactory.decodeResource(getResources(), R.drawable.bluebubble);
+        			 bubble = BitmapFactory.decodeResource(getResources(), R.drawable.bubble);
         			 Bubble b = new Bubble(r1.nextInt(getWidth()-100), r2.nextInt(getHeight()), bubble, 10);
         		 bubbles.add(b);
 
@@ -176,11 +180,11 @@ public class GameBoardView extends View implements OnTouchListener, Serializable
 
 
              	
-             	
+        	 }
              }
                	
         }
-       
+       timekeeper++;
         
         
         
@@ -207,12 +211,14 @@ public class GameBoardView extends View implements OnTouchListener, Serializable
 			bubbles.remove(i);
         }
         }
+        invalidate();
 }
-	
+	/*
 	private void update() {
         
         _redrawHandler.sleep(_spawnDelay);
     }
+    */
 	
 	private void initGameBoardView() {
         setFocusable(true);
@@ -235,6 +241,7 @@ public class GameBoardView extends View implements OnTouchListener, Serializable
 				return true;
 			}
 		}
+		invalidate();
 		return false;
 	}
 	
