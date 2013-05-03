@@ -1,0 +1,12 @@
+<?xml version="1.0" encoding="utf-8"?>
+<PreferenceScreen xmlns:android="http://schemas.android.com/apk/res/android">
+    <ListPreference android:key="NUMBER OF BUBBLES"
+        android:title="Frequency Of Bubbles"
+        android:summary="Choose frequency of bubble spawning"
+        android:entries="@array/bubblespawn_options" 
+        android:entryValues="@array/bubblespawn_values"
+        android:dialogTitle="Frequency of Bubbles" 
+        android:defaultValue="1" />
+   
+    
+</PreferenceScreen>

@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+
+    <string name="app_name">BubblePop</string>
+    <string name="game_title">Pop All The Bubbles!</string>
+    <string name="options_title">BubblePop Options</string>
+    <string name="options_shortcut">o</string>
+    <string name="howtoplaytitle"> How Do I Play?</string>
+    <string name="howtoplay"> Touch the bubbles to pop them, but be careful! Don\'t touch one that has a bomb!</string>
+    <string name="hello_world">Hello world!</string>
+    <string name="menu_settings">Settings</string>
+    <string name="title_activity_high_score">HighScoreActivity</string>
+
+</resources>
