@@ -135,40 +135,40 @@ public class GameBoardView extends View implements OnTouchListener, Serializable
 
         	 }else if(bubblenum == 1)
         	 {
-        		 bubble  = BitmapFactory.decodeResource(getResources(), R.drawable.greenbubble);
+        		 bubble  = BitmapFactory.decodeResource(getResources(), R.drawable.bubble2);
         		 Bubble b = new Bubble(r1.nextInt(getWidth()-100), r2.nextInt(getHeight()), bubble, 20);
         		 bubbles.add(b);
 
         	 }else if(bubblenum == 2)
         	 {
-        		 bubble = BitmapFactory.decodeResource(getResources(), R.drawable.redbubble);
+        		 bubble = BitmapFactory.decodeResource(getResources(), R.drawable.bubble3);
         		 Bubble b = new Bubble(r1.nextInt(getWidth()-100), r2.nextInt(getHeight()), bubble, 30);
         		 bubbles.add(b);
         	 }	
         	 else if(bubblenum == 3){
-        		 bubble = BitmapFactory.decodeResource(getResources(), R.drawable.lightbluebubble);
+        		 bubble = BitmapFactory.decodeResource(getResources(), R.drawable.bubble4);
         		 Bubble b = new Bubble(r1.nextInt(getWidth()-100), r2.nextInt(getHeight()), bubble, 40);
         		 bubbles.add(b);
 
         	 }else if(bubblenum == 4){
-        		 bubble = BitmapFactory.decodeResource(getResources(), R.drawable.purplebubble);
+        		 bubble = BitmapFactory.decodeResource(getResources(), R.drawable.bubble5);
         		 Bubble b = new Bubble(r1.nextInt(getWidth()-100), r2.nextInt(getHeight()), bubble, 50);
         		 bubbles.add(b);
 
 
         	 }else if(bubblenum == 5)
         	 {
-        		 bubble = BitmapFactory.decodeResource(getResources(), R.drawable.orangebubble);
+        		 bubble = BitmapFactory.decodeResource(getResources(), R.drawable.bubble6);
         		 Bubble b = new Bubble(r1.nextInt(getWidth()-100), r2.nextInt(getHeight()-100), bubble, 60);
         		 bubbles.add(b);
         	 }else if(bubblenum == 6)
         	 {
-        		 bubble = BitmapFactory.decodeResource(getResources(), R.drawable.goldbubble);
+        		 bubble = BitmapFactory.decodeResource(getResources(), R.drawable.bubble7);
         		 Bubble b = new Bubble(r1.nextInt(getWidth()-100), r2.nextInt(getHeight()-100), bubble, 70);
         		 bubbles.add(b);
         	 }else if (bubblenum == 7 || bubblenum == 8)
         	 {
-        		 bubble = BitmapFactory.decodeResource(getResources(), R.drawable.bombbubble);
+        		 bubble = BitmapFactory.decodeResource(getResources(), R.drawable.bubble8);
         		 bubble = Bitmap.createScaledBitmap(bubble, 150, 130, true);
         		 Bubble b = new Bubble(r1.nextInt(getWidth()-100), r2.nextInt(getHeight()-100), bubble, 100);
         		 bubbles.add(b);
